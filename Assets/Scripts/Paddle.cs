@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected Rigidbody2D _rigidbody;
+    // making attributes public in the editor allows them to 
+    // appear in the editor
+    public float speed = 10.0f;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        // On gameObj that this script is attached too, 
+        // will look for Rigidbody2D comp and return it
+        _rigidbody = GetComponent<Rigidbody2D>();
+
     }
 }
