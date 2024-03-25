@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerScore()
     {
+        Debug.Log(_playerScore);
         _playerScore++;
 
         if (_playerScore == scoreLimit) {
