@@ -12,16 +12,16 @@ public class Ball : MonoBehaviour
     void Start()
     {
         ResetPosition();
+        AddStartingForce();
     }
 
     public void ResetPosition()
     {
         _rigidBody.position = Vector3.zero;
-
-        AddStartingForce();
+        _rigidBody.velocity = Vector2.zero;
     }
 
-    private void AddStartingForce()
+    public void AddStartingForce()
     {
         // Generate a random x direction
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
