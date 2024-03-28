@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -7,32 +8,40 @@ public class GameManager : MonoBehaviour
     public Text playerScoreText;
     public Text compScoreText;
     public int scoreLimit = 3;
-    private int _playerScore;
-    private int _compScore;
+    // private int _playerScore;
+    // private int _compScore;
 
     public void PlayerScore()
     {
-        Debug.Log(_playerScore);
-        _playerScore++;
+        Debug.Log(Score.playerScore);
+        Score.playerScore++;
 
-        if (_playerScore == scoreLimit) {
-            Debug.Log("Player Wins");
+        if (Score.playerScore == scoreLimit)
+        {
+            Score.winner = "Player";
+            SwitchToWinScreen();
         }
 
-        this.playerScoreText.text = _playerScore.ToString();
+        this.playerScoreText.text = Score.playerScore.ToString();
         ResetRound();
     }
 
     public void CompScore()
     {
-        _compScore++;
+        Score.compScore++;
 
-        if (_compScore == scoreLimit) {
-            Debug.Log("CPU Wins");
+        if (Score.compScore == scoreLimit)
+        {
+            Score.winner = "CPU";
+            SwitchToWinScreen();
         }
 
-        this.compScoreText.text = _compScore.ToString();
+        this.compScoreText.text = Score.compScore.ToString();
         ResetRound();
+    }
+
+    private void SwitchToWinScreen() {
+        SceneManager.LoadScene("WinScreen");
     }
 
     private void ResetRound()
