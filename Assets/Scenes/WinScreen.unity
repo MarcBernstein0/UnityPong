@@ -680,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b798c4008f5a1c34f971481ec2a6b2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winScreenText: {fileID: 1512398605}
 --- !u!4 &1314377457
 Transform:
   m_ObjectHideFlags: 0
@@ -729,7 +730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.8, y: -192.5}
+  m_AnchoredPosition: {x: -13.59, y: -351.7}
   m_SizeDelta: {x: 550, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1512398605
@@ -754,7 +755,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
-    m_FontSize: 272
+    m_FontSize: 103
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -765,7 +766,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: WINNER
 --- !u!222 &1512398606
 CanvasRenderer:
   m_ObjectHideFlags: 0

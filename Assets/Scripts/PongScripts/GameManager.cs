@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
     public Text playerScoreText;
     public Text compScoreText;
     public int scoreLimit = 3;
-    // private int _playerScore;
-    // private int _compScore;
 
     public void PlayerScore()
     {
@@ -18,7 +16,7 @@ public class GameManager : MonoBehaviour
 
         if (Score.playerScore == scoreLimit)
         {
-            Score.winner = "Player";
+            Score.winner = "PLAYER";
             SwitchToWinScreen();
         }
 
