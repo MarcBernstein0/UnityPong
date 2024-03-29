@@ -11,6 +11,8 @@ public class UI_Manager : MonoBehaviour
     }
     public void RestartGame()
     {
+        Score.compScore = 0;
+        Score.playerScore = 0;
         SceneManager.LoadScene("Pong");
     }
 
