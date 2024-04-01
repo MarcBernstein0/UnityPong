@@ -39,12 +39,16 @@ public class GameManager : MonoBehaviour
         ResetRound();
     }
 
+
+
     private void SwitchToWinScreen() {
         SceneManager.LoadScene("WinScreen");
     }
 
     private void ResetRound()
     {
+        this.playerScoreText.text = Score.playerScore.ToString();
+        this.compScoreText.text = Score.compScore.ToString();
         this.ball.ResetPosition();
         StartCoroutine(this.ball.DelayStart(1));
     }
