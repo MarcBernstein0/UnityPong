@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,6 +46,6 @@ public class GameManager : MonoBehaviour
     private void ResetRound()
     {
         this.ball.ResetPosition();
-        this.ball.AddStartingForce();
+        StartCoroutine(this.ball.DelayStart(1));
     }
 }

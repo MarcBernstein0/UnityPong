@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -12,7 +13,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         ResetPosition();
-        AddStartingForce();
+        StartCoroutine(DelayStart(1));
     }
 
     public void ResetPosition()
@@ -21,7 +22,7 @@ public class Ball : MonoBehaviour
         _rigidBody.velocity = Vector2.zero;
     }
 
-    public void AddStartingForce()
+    private void AddStartingForce()
     {
         // Generate a random x direction
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
@@ -31,6 +32,21 @@ public class Ball : MonoBehaviour
 
         Vector2 direction = new Vector2(x, y);
         _rigidBody.AddForce(direction * this.speed);
+
+    }
+
+    public IEnumerator DelayStart(float seconds)
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(seconds);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+
+        AddStartingForce();
 
     }
 
